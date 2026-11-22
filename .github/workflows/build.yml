@@ -10,8 +10,22 @@ jobs:
           dotnet-version: '8.0.x'
       - run: |
           mkdir -p s
-          printf 'namespace UnityEngine { public class Object {} public class Component : Object {} public class Behaviour : Component {} public class MonoBehaviour : Behaviour {} }\n' > s/s.cs
-          printf '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net472</TargetFramework></PropertyGroup></Project>\n' > s/UnityEngine.csproj
+          cat << 'EOF' > s/s.cs
+          namespace UnityEngine
+          {
+              public class Object {}
+              public class Component : Object {}
+              public class Behaviour : Component {}
+              public class MonoBehaviour : Behaviour {}
+          }
+          EOF
+          cat << 'EOF' > s/UnityEngine.csproj
+          <Project Sdk="Microsoft.NET.Sdk">
+            <PropertyGroup>
+              <TargetFramework>net472</TargetFramework>
+            </PropertyGroup>
+          </Project>
+          EOF
           dotnet build s -c Release -o .
           dotnet build DebtMod.csproj -c Release
       - uses: actions/upload-artifact@v4
