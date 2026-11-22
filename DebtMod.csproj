@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony"><HintPath>0Harmony.dll</HintPath></Reference>
+    <Reference Include="BepInEx"><HintPath>BepInEx.dll</HintPath></Reference>
+    <Reference Include="lstwoMODS_Core"><HintPath>lstwoMODS_Core.dll</HintPath></Reference>
+    <Reference Include="lstwoMODS_WobblyLife"><HintPath>lstwoMODS_WobblyLife.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>UnityEngine.CoreModule.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>
